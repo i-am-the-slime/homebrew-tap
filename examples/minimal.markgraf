@@ -1,0 +1,9 @@
+frame setup {
+  +node a "A"
+  +node b "B"
+  +edge a b
+}
+
+frame greet {
+  a -> b "hello"
+}
