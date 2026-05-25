@@ -1,6 +1,6 @@
 cask "markgraf" do
   version "0.0.18"
-  sha256 "5c8bc46203d2f38d48c5fdc14db1df8f3afa204d69ffb9b7bfa44e0cfedb6da4"
+  sha256 "772c2539b1f0bf0905ea4eeb1a966a610b687ec0ee26906659fa3863b999e4d1"
 
   url "https://github.com/i-am-the-slime/homebrew-tap/releases/download/v0.0.18/markgraf-darwin-arm64.tar.gz"
   name "markgraf"
