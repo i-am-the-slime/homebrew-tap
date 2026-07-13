@@ -1,9 +1,9 @@
-frame setup {
-  +node a "A"
-  +node b "B"
-  +edge a b
+scene setup {
+  + a: A
+  + b: B
+  + a -> b
 }
 
-frame greet {
-  a -> b "hello"
+scene greet {
+  a ~> b: hello
 }

@@ -1,43 +1,35 @@
 seed 1
 
-frame setup {
-  +node client "Client"
-  +node api "API"
-  +node db "Database"
-  +edge client api
-  +edge api db
+scene setup {
+  + client: Client
+  + api: API
+  + db: Database
+  + client -> api
+  + api -> db
 }
 
-frame "direct read" {
-  client -> api "GET /user/42"
-  api -> db "SELECT"
+scene "direct read" {
+  client ~> api: GET /user/42
+  api ~> db: SELECT
 }
 
-frame "introduce cache" {
-  +node cache "Cache"
-  -edge api db
-  +edge api cache
+scene "introduce cache" {
+  + cache: Cache
+  - api -> db
+  + api -> cache
 }
 
-frame "cache hit" {
-  client -> api "GET /user/42"
-  par {
-    api -> cache "HIT"
-    +bubble skip cache "skipped DB!"
-  }
-  -bubble skip
+scene "cache hit" {
+  client ~> api: GET /user/42
+  api ~> cache: HIT
 }
 
-frame "introduce queue" {
-  +node queue "Queue"
-  +edge api queue
+scene "introduce queue" {
+  + queue: Queue
+  + api -> queue
 }
 
-frame publish {
-  client -> api "POST /order"
-  par {
-    api -> queue "publish"
-    +bubble dispatch queue "async dispatch"
-  }
-  -bubble dispatch
+scene publish {
+  client ~> api: POST /order
+  api ~> queue: publish
 }

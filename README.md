@@ -9,7 +9,7 @@ Animated graph diagrams from a tiny declarative source language.
 ## Install
 
 ```sh
-brew install --cask i-am-the-slime/tap/markgraf
+brew install --cask markgrafhq/tap/markgraf
 ```
 
 ## Usage
@@ -27,13 +27,13 @@ See [`examples/`](examples/) for `.markgraf` source files.
 A 2-node hello:
 
 ```
-frame setup {
-  +node a "A"
-  +node b "B"
-  +edge a b
+scene setup {
+  + a: A
+  + b: B
+  + a -> b
 }
 
-frame greet {
-  a -> b "hello"
+scene greet {
+  a ~> b: hello
 }
 ```
