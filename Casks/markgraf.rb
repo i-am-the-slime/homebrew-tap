@@ -1,8 +1,8 @@
 cask "markgraf" do
-  version "0.1.5"
-  sha256 "5e948fe11a742dbb8bd2ae994595631ccca7a0963371295b9cd831b8235cfe77"
+  version "0.1.6"
+  sha256 "43fb7986e8bb1d04ec66c823b158533da1f8f705d17edf95093f6e9225e8ca0b"
 
-  url "https://github.com/markgrafhq/homebrew-tap/releases/download/v0.1.5/markgraf-darwin-arm64.tar.gz"
+  url "https://github.com/markgrafhq/homebrew-tap/releases/download/v0.1.6/markgraf-darwin-arm64.tar.gz"
   name "markgraf"
   desc "Animated graph diagrams CLI"
   homepage "https://github.com/markgrafhq/homebrew-tap"
