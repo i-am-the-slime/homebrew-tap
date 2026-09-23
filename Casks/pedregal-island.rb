@@ -1,6 +1,6 @@
 cask "pedregal-island" do
-  version "0.1.3"
-  sha256 "4d53b85f2b120f6db3fa3c7087355c6c2bff82fc845137e3f0e29a9bad3ffbe9"
+  version "0.1.4"
+  sha256 "e5b6a52c9370c5b7c6972aecacba816250877311412ff67b5e75f642b08d1404"
 
   url "https://github.com/i-am-the-slime/pedregal-island-releases/releases/download/v#{version}/Pedregal-Island-Mac-#{version}-arm64.zip"
   name "Pedregal Island"
