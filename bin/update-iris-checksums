@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+repository="i-am-the-slime/iris-go-backend"
+formula="$(cd "$(dirname "$0")/.." && pwd)/Formula/iris.rb"
+version=$(ruby -ne 'puts $1 if /^\s*version "([^"]+)"/' "$formula")
+tag="v$version"
+
+checksum() {
+  curl --fail --silent --show-error --location \
+    "https://github.com/$repository/releases/download/$tag/iris-$1.tar.gz" |
+    shasum -a 256 | cut -d' ' -f1
+}
+
+ruby - "$formula" \
+  "$(checksum universal-apple-darwin)" \
+  "$(checksum aarch64-unknown-linux-musl)" \
+  "$(checksum x86_64-unknown-linux-musl)" <<'RUBY'
+path, *checksums = ARGV
+lines = File.readlines(path)
+sha_lines = lines.each_index.select { |index| lines[index] =~ /^\s*sha256 "/ }
+abort "expected 3 sha256 lines, found #{sha_lines.size}" unless sha_lines.size == 3
+sha_lines.zip(checksums).each do |index, checksum|
+  lines[index] = lines[index].sub(/sha256 "[^"]*"/, "sha256 \"#{checksum}\"")
+end
+File.write(path, lines.join)
+RUBY
+
+grep -n 'sha256' "$formula"
