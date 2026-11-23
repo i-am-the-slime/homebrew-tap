@@ -26,6 +26,20 @@ class Iris < Formula
     bin.install "iris"
   end
 
+  def caveats
+    <<~EOS
+      Iris uses Spago to fetch your packages, so you need that too:
+        brew install spago
+      or, if you already have Node:
+        npm install -g spago
+
+      Then start a project and run it with the Go backend:
+        mkdir my-app && cd my-app
+        iris new
+        iris run --go
+    EOS
+  end
+
   test do
     assert_equal "iris #{version}", shell_output("#{bin}/iris --version").strip
   end
