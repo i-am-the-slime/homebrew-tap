@@ -1,22 +1,22 @@
 class Iris < Formula
   desc "PureScript compiler with a Go backend"
   homepage "https://github.com/i-am-the-slime/iris-go-backend"
-  version "0.1.17-go.3"
+  version "0.1.18-go.1"
   license "BSD-3-Clause"
 
   on_macos do
     url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/iris-universal-apple-darwin.tar.gz"
-    sha256 "f3eba95314536c83e7933ee58c289324dab75f02c59a5701da017e4094cc6ea3"
+    sha256 "5d4e4cf26d29e4916161517941c0d61b6702d16df5d388849f885d302f889d47"
   end
 
   on_linux do
     on_arm do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/iris-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "82572b94f826123f00fd11c2a40a23daee21cd7bc974470b217161b40c676954"
+      sha256 "a4b7dc77c9d77c87e7db599bf1d20c1ed017bb56ecf6607043936593a66959e5"
     end
     on_intel do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/iris-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "b03732c0cb7cb646ca1c757b8bf3f1145bfa8723d16034e35fbfa39549337011"
+      sha256 "b938c44aae37b8f037fd7998fa9895571e811c7c0babf8ee5ccd1f04a2c5fb84"
     end
   end
 
