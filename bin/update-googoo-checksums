@@ -2,13 +2,13 @@
 set -euo pipefail
 
 repository="i-am-the-slime/iris-go-backend"
-formula="$(cd "$(dirname "$0")/.." && pwd)/Formula/iris.rb"
+formula="$(cd "$(dirname "$0")/.." && pwd)/Formula/googoo.rb"
 version=$(ruby -ne 'puts $1 if /^\s*version "([^"]+)"/' "$formula")
 tag="v$version"
 
 checksum() {
   curl --fail --silent --show-error --location \
-    "https://github.com/$repository/releases/download/$tag/iris-$1.tar.gz" |
+    "https://github.com/$repository/releases/download/$tag/googoo-$1.tar.gz" |
     shasum -a 256 | cut -d' ' -f1
 }
 
