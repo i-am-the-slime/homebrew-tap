@@ -1,22 +1,22 @@
 class Googoo < Formula
   desc "PureScript compiler with a Go backend"
   homepage "https://github.com/i-am-the-slime/iris-go-backend"
-  version "0.1.18-go.4"
+  version "0.1.18-go.5"
   license "BSD-3-Clause"
 
   on_macos do
     url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-universal-apple-darwin.tar.gz"
-    sha256 "1a9f477198d11cd34663b95eb7dc736d5a5e1992dc9dc3e381dc6de3460aed00"
+    sha256 "b43a18fb52502b9c250035ee1036540ed49200eecd06c720ae51cbd528234390"
   end
 
   on_linux do
     on_arm do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "9294b75a734f0de0baa1187088fec0ed46b5a7943e691aae230ded828d6cef85"
+      sha256 "6ebc3e1e8e2077498fc419b65affd9c23525be0ca1c9a032c66d920608f6c6a0"
     end
     on_intel do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "66b794d02f7140fd3e7bc349c6866e1dc0f8df395862aed60ad6b84b47679f27"
+      sha256 "341c6fe79bfa44e999b49462a4e81df230e29a5b0bba82b43b40674e36327f14"
     end
   end
 
