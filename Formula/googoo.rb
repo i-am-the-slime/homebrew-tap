@@ -1,22 +1,22 @@
 class Googoo < Formula
   desc "PureScript compiler with a Go backend"
   homepage "https://github.com/i-am-the-slime/iris-go-backend"
-  version "0.1.18-go.6"
+  version "0.1.18-go.11"
   license "BSD-3-Clause"
 
   on_macos do
     url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-universal-apple-darwin.tar.gz"
-    sha256 "09f16760c168bda475a66287e88001c670d83f4d0ffd0b727b9177b5250114d0"
+    sha256 "5a003cd813af5b4549d391e34df6d89c95dcb376c86787a9eee4e849b59a7c55"
   end
 
   on_linux do
     on_arm do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-aarch64-unknown-linux-musl.tar.gz"
-      sha256 "702a0b1dfacf0be8943a555193bd353c2ca67939d2579f3677668222c9ef007a"
+      sha256 "576d32f08d99ca1ad8220adb6d6097f5c8faa5d5758ef14a64ea90d378e8f2cf"
     end
     on_intel do
       url "https://github.com/i-am-the-slime/iris-go-backend/releases/download/v#{version}/googoo-x86_64-unknown-linux-musl.tar.gz"
-      sha256 "e1390dbd3f215ab1e6d05eddfe15bb0581be53ca9d5558efe6d74ab28ab593d1"
+      sha256 "6dbbc9857854cfcf7423edf25c72c4cdb911ce5e034f181dd5f0839e91b8a2d9"
     end
   end
 
@@ -38,7 +38,7 @@ class Googoo < Formula
       Then start a project and run it with the Go backend:
         mkdir my-app && cd my-app
         googoo new
-        googoo run --go
+        googoo run
 
       googoo used to be called iris. `iris` still works for now, and tells you so.
     EOS
